@@ -1,0 +1,26 @@
+=========================
+=         CLC-8         =
+=========================
+
+=== Overview ===
+* 8-bit TTL Minicomputer Design
+* 8-bit data width
+* 16-bit address bus
+* 64 KiB accessible memory (more with banking)
+* Designed for 4 MHz clock speed (~100-150k instructions per second)
+* Device communication via dedicated I/O instructions
+
+=== Instructions ===
+0: MV     reg, imm8/reg     -> reg = imm8/reg
+1: LV
+2: SW
+3: PUSH
+4: POP
+5: LDA
+6: JMP
+7:
+AND
+OR
+NOR
+
+ 
