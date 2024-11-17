@@ -11,16 +11,28 @@
 * Device communication via dedicated I/O instructions
 
 === Instructions ===
-0: MV     reg, imm8/reg     -> reg = imm8/reg
-1: LV
-2: SW
+** Load Store Architecture Design **
+** nemonic | source | destination **
+
+0: MV     reg, imm8/reg     -> reg = imm8/reg      | Move Value: 
+1: LV     reg, [imm16/HL]   -> reg = [HL/imm16]    | Load Value:
+2: SV     [imm16/HL], reg   -> [HL/imm16] = reg    | Store Value:
 3: PUSH
 4: POP
 5: LDA
-6: JMP
-7:
-AND
-OR
-NOR
+6: JNZ
+7: INB
+8: OUTB
+9: ADD^
+A: ADC^
+B: AND
+C: OR
+D: NOR
+E: CMP^
+F: SBB^
 
- 
+Bitwise Operations: ADD^ ADC^ AND OR NOT CMP^ SBB^
+* Could only use NOR for all arithmetic operations (ALU) but this makes it faster and we had space in the operations space
+
+=== REGISTERS ===
+A (0): GP register
