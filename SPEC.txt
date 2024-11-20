@@ -21,8 +21,8 @@
 4: POP
 5: LDA
 6: JNZ
-7: INB
-8: OUTB
+7: INV
+8: OUTV
 9: ADD^
 A: ADC^
 B: AND
@@ -35,4 +35,27 @@ Bitwise Operations: ADD^ ADC^ AND OR NOT CMP^ SBB^
 * Could only use NOR for all arithmetic operations (ALU) but this makes it faster and we had space in the operations space
 
 === REGISTERS ===
-A (0): GP register
+ax: GP register
+bx: GP register
+cx: GP register
+dx: GP register
+lx: GP register / Low register | low Byte (8 bits) register
+hx: GP register / High register
+zx: GP register / Output register
+fx: Flag register | LSB - MSB (carry, borrow, zero / equal, less)
+
+=== AUX REGISTERS ===
+pclx: Program Counter Low Byte register
+pchx: Program Counter High Byte register
+splx: Stack Pointer Low Byte register
+sphx: Stack Pointer High Byte register
+ir  : Instruction register
+mar : Memory Address register
+mbr : Memory Buffer register
+sr  : Status register
+
+=== MACROS ===
+spinc: stack pointer increment
+spdec: stack pointer decrement
+pcinc: program counter increment
+pcdec: program counter decrement
