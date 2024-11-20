@@ -14,8 +14,8 @@
 ** Load Store Architecture Design **
 ** nemonic | source | destination **
 
-0: MV     reg, imm8/reg     -> reg = imm8/reg      | Move Value: 
-1: LV     reg, [imm16/HL]   -> reg = [HL/imm16]    | Load Value:
+0: MV     [reg, imm8/reg]     -> reg = imm8/reg      | Move Value: 
+1: LV     [reg, imm16/HL]   -> reg = [HL/imm16]    | Load Value:
 2: SV     [imm16/HL], reg   -> [HL/imm16] = reg    | Store Value:
 3: PUSH
 4: POP
